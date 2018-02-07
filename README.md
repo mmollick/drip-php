@@ -78,121 +78,121 @@ All of the request methods can be accessed statically from the `\MMollick\Drip\D
 
 ##### Account
 
-| Actions                    | Methods                                              |
-| :------------------------- | :--------------------------------------------------- |
-| List accounts              | `getAccounts()` |
-| Fetch an account           | `getAccount($account_id)` |
+| Actions          | Methods                   |
+|:-----------------|:--------------------------|
+| List accounts    | `getAccounts()`           |
+| Fetch an account | `getAccount($account_id)` |
 
 ##### Broadcasts
 
-| Actions                    | Methods                                              |
-| :------------------------- | :--------------------------------------------------- |
-| List broadcasts            | `getBroadcasts($options = [])` |
-| Fetch a broadcast          | `getBroadcast($broadcast_id)` |
+| Actions           | Methods                        |
+|:------------------|:-------------------------------|
+| List broadcasts   | `getBroadcasts($options = [])` |
+| Fetch a broadcast | `getBroadcast($broadcast_id)`  |
 
 ##### Campaigns
 
-| Actions                    | Request Methods                                      |
-| :------------------------- | :--------------------------------------------------- |
-| List campaigns             | `getCampaigns($options = [])`   |
-| Fetch a campaign           | `getCampaign($campaign_id)`                                      |
-| Activate a campaign        | `activateCampaign($campaign_id)`                             |
-| Pause a campaign           | `pauseCampaign($campaign_id)`                                |
-| List campaign subscribers  | `listCampaignSubscribers($campaign_id, $options = [])`                          |
-| Subscribe to a campaign    | `subscribeToCampaign($campaign_id, $subscriber)`  |
+| Actions                   | Request Methods                                        |
+|:--------------------------|:-------------------------------------------------------|
+| List campaigns            | `getCampaigns($options = [])`                          |
+| Fetch a campaign          | `getCampaign($campaign_id)`                            |
+| Activate a campaign       | `activateCampaign($campaign_id)`                       |
+| Pause a campaign          | `pauseCampaign($campaign_id)`                          |
+| List campaign subscribers | `listCampaignSubscribers($campaign_id, $options = [])` |
+| Subscribe to a campaign   | `subscribeToCampaign($campaign_id, $subscriber)`       |
 
 ##### Campaign Subscriptions
 
-| Actions                    | Methods                                              |
-| :------------------------- | :--------------------------------------------------- |
-| List subscriber's subscriptions | See `listSubscribersSubscriptions` in Subscribers         |
+| Actions                         | Methods                                           |
+|:--------------------------------|:--------------------------------------------------|
+| List subscriber's subscriptions | See `listSubscribersSubscriptions` in Subscribers |
 
 ##### Conversions
 
-| Actions                    | Methods                                              |
-| :------------------------- | :--------------------------------------------------- |
-| List all conversions       | `getConversions($options = [])`                         |
-| Fetch a conversion         | `getConversion($conversion_id)`                                    |
+| Actions              | Methods                         |
+|:---------------------|:--------------------------------|
+| List all conversions | `getConversions($options = [])` |
+| Fetch a conversion   | `getConversion($conversion_id)` |
 
 ##### Custom Fields
 
-| Actions                    | Methods                                              |
-| :------------------------- | :--------------------------------------------------- |
-| List all custom fields     | `getCustomFields()`                                     |
+| Actions                | Methods             |
+|:-----------------------|:--------------------|
+| List all custom fields | `getCustomFields()` |
 
 ##### Events
 
-| Actions                    | Methods                                              |
-| :------------------------- | :--------------------------------------------------- |
-| Track an event             | `recordEvent($payload)`       |
-| Track a batch of events    | Coming soon...                              |
-| List all custom event actions | `listActions()`                                  |
+| Actions                       | Methods                 |
+|:------------------------------|:------------------------|
+| Track an event                | `recordEvent($payload)` |
+| Track a batch of events       | Coming soon...          |
+| List all custom event actions | `listActions()`         |
 
 ##### Forms
 
-| Actions                    | Methods                                              |
-| :------------------------- | :--------------------------------------------------- |
-| List all forms            | `getForms($options = [])`                                              |
-| Fetch a form              | `getForm($form_id)`                                           |
+| Actions        | Methods                   |
+|:---------------|:--------------------------|
+| List all forms | `getForms($options = [])` |
+| Fetch a form   | `getForm($form_id)`       |
 
 ##### Purchases
 
-| Actions                    | Methods                                              |
-| :------------------------- | :--------------------------------------------------- |
-| List purchases for a subscriber | coming soon...                            |
-| Create a purchase          | coming soon...      |
-| Fetch a purchase           | coming soon...                            |
+| Actions                         | Methods        |
+|:--------------------------------|:---------------|
+| List purchases for a subscriber | coming soon... |
+| Create a purchase               | coming soon... |
+| Fetch a purchase                | coming soon... |
 
 ##### Subscribers
 
-| Actions                    | Methods                                              |
-| :------------------------- | :--------------------------------------------------- |
-| List subscribers           | `getSubscribers($options = [])`                         |
-| Create/update a subscriber | `createOrUpdateSubscriber($email, $payload = {})`  |
-| Create/update a batch of subscribers | coming soon... |
-| Unsubscribe a batch of subscribers | coming soon      |
-| Fetch a subscriber         | `getSubscriber($id_or_email)`                           |
-| Delete                     | `deleteSubscriber($id_or_email)`                    |
-| Subscribe to a campaign    | See `subscribeToCampaign` in Campaigns       |
-| Unsubscribe from all mailings | `removeSubscriberFromAllMailings($id_or_email)`              |
-| Unsubscribe from campaigns               | `removeSubscriberFromCampaigns($id_or_email, $campaign_id = null)`            |
-| List subscriber's subscriptions               | `listSubscribersSubscriptions($subscriber_id)`            |
+| Actions                              | Methods                                                            |
+|:-------------------------------------|:-------------------------------------------------------------------|
+| List subscribers                     | `getSubscribers($options = [])`                                    |
+| Create/update a subscriber           | `createOrUpdateSubscriber($email, $payload = {})`                  |
+| Create/update a batch of subscribers | coming soon...                                                     |
+| Unsubscribe a batch of subscribers   | coming soon                                                        |
+| Fetch a subscriber                   | `getSubscriber($id_or_email)`                                      |
+| Delete                               | `deleteSubscriber($id_or_email)`                                   |
+| Subscribe to a campaign              | See `subscribeToCampaign` in Campaigns                             |
+| Unsubscribe from all mailings        | `removeSubscriberFromAllMailings($id_or_email)`                    |
+| Unsubscribe from campaigns           | `removeSubscriberFromCampaigns($id_or_email, $campaign_id = null)` |
+| List subscriber's subscriptions      | `listSubscribersSubscriptions($subscriber_id)`                     |
 
 ##### Tags
 
-| Actions                    | Methods                                              |
-| :------------------------- | :--------------------------------------------------- |
-| List tags                  | `getTags()`                                              |
-| Apply a tag                | `applyTag($email, $tag)`                             |
-| Remove a tag               | `removeTag($email, $tag)`                            |
+| Actions      | Methods                   |
+|:-------------|:--------------------------|
+| List tags    | `getTags()`               |
+| Apply a tag  | `applyTag($email, $tag)`  |
+| Remove a tag | `removeTag($email, $tag)` |
 
 ##### Webhooks
 
-| Actions                    | Methods                                              |
-| :------------------------- | :--------------------------------------------------- |
-| List webhooks              | `getWebhooks()`                                          |
-| Fetch a webhook            | `getWebhook($webhook_id)`                                       |
-| Create a new webhook       | `createWebhook($payload)` |
-| Delete a webhook           | `deleteWebhook($webhook_id)`                                |
+| Actions              | Methods                      |
+|:---------------------|:-----------------------------|
+| List webhooks        | `getWebhooks()`              |
+| Fetch a webhook      | `getWebhook($webhook_id)`    |
+| Create a new webhook | `createWebhook($payload)`    |
+| Delete a webhook     | `deleteWebhook($webhook_id)` |
 
 ##### Workflows
 
-| Actions                    | Methods                                              |
-| :------------------------- | :--------------------------------------------------- |
-| List workflows             | `getWorkflows($options = [])`                                         |
-| Fetch a workflow           | `getWorkflow($workflow_id)`                                      |
-| Activate a workflow        | `activateWorkflow($workflow_id)`                             |
-| Pause a workflow           | `pauseWorkflow($workflow_id)`                                |
-| Start a subscriber on a workflow | `addSubscriberToWorkflow($workflow_id, $options = [])` |
+| Actions                             | Methods                                                    |
+|:------------------------------------|:-----------------------------------------------------------|
+| List workflows                      | `getWorkflows($options = [])`                              |
+| Fetch a workflow                    | `getWorkflow($workflow_id)`                                |
+| Activate a workflow                 | `activateWorkflow($workflow_id)`                           |
+| Pause a workflow                    | `pauseWorkflow($workflow_id)`                              |
+| Start a subscriber on a workflow    | `addSubscriberToWorkflow($workflow_id, $options = [])`     |
 | Remove a subscriber from a workflow | `removeSubscriberFromWorkflow($workflow_id, $id_or_email)` |
 
 ##### Workflow Triggers
 
-| Actions                    | Methods                                              |
-| :------------------------- | :--------------------------------------------------- |
-| List workflow triggers     | `getWorkflowTriggers($workflow_id)`                             |
-| Create a workflow trigger  | `createWorkflowTrigger($workflow_id, $options = [])`         |
-| Update a workflow trigger  | `updateWorkflowTrigger($workflow_id, $options = [])`          |
+| Actions                   | Methods                                              |
+|:--------------------------|:-----------------------------------------------------|
+| List workflow triggers    | `getWorkflowTriggers($workflow_id)`                  |
+| Create a workflow trigger | `createWorkflowTrigger($workflow_id, $options = [])` |
+| Update a workflow trigger | `updateWorkflowTrigger($workflow_id, $options = [])` |
 
 ## Contributing
 
