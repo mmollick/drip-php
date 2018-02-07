@@ -72,6 +72,37 @@ $authUsingOauth = new \MMollick\Drip\Auth($account_id, $access_token, true);
 $dripUsingOauth = new \MMollick\Drip\Request($authUsingOauth);
 ```
 
+### Error Handling
+
+This library will throw one of several exceptions when an error occurs either with the Request or the package itself. It's recommended that requests are made within in a `try...catch` block to properly handle errors as they arise. See the example below.
+
+```php
+try {
+    $drip->getSubscribers();
+}
+catch (\MMollick\Drip\Errors\AuthException $e) {
+    // Authentication failed, check API keys
+}
+catch (\MMollick\Drip\Errors\ValidationException $e) {
+    //The request failed validation, see message or $e->getErrors() for more info
+}
+catch (\MMollick\Drip\Errors\ApiExceptions $e) {
+    // Non-specific API error returned, see message or $e->getErrors() for more info
+}
+catch (\MMollick\Drip\Errors\RateLimitException $e) {
+    // Requests are being throttled, try the request again in a while
+}
+catch (\MMollick\Drip\Errors\HttpClientException $e) {
+    // Most likely a network or Curl related error, see the message for more details
+}
+catch (\MMollick\Drip\Errors\GeneralException $e) {
+    // A generic exception, see message for details
+}
+catch (\Exception $e) {
+    // Catch anything else just for good measure
+}
+```
+
 ### Methods
 
 All of the request methods can be accessed statically from the `\MMollick\Drip\Drip` class or by calling them from the `\MMollick\Drip\Request` object.
