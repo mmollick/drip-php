@@ -1,0 +1,4 @@
+{
+  "message": "API rate limit exceeded. Please try again in an hour.",
+  "documentation": "https://www.getdrip.com/docs/rest-api#rate-limting"
+}

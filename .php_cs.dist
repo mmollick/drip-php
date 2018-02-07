@@ -1,0 +1,23 @@
+<?php
+
+$finder = PhpCsFixer\Finder::create()
+    ->in(__DIR__);
+
+return PhpCsFixer\Config::create()
+    ->setRules([
+        '@PSR2' => true,
+        'align_multiline_comment' => ['comment_type' => 'phpdocs_like'],
+        'array_syntax' => ['syntax' => 'short'],
+        'cast_spaces' => ['space' => 'single'],
+        'concat_space' => ['spacing' => 'one'],
+        'lowercase_cast' => true,
+        'no_unused_imports' => true,
+        'no_useless_else' => true,
+        'self_accessor' => true,
+        'short_scalar_cast' => true,
+        'single_line_comment_style' => ['comment_types' => ['hash']],
+        'single_quote' => true,
+        'ternary_operator_spaces' => true,
+        'ternary_to_null_coalescing' => true
+    ])
+    ->setFinder($finder);

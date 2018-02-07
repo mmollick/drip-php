@@ -1,0 +1,14 @@
+{
+  "errors": [
+    {
+      "code": "presence_error",
+      "attribute": "email",
+      "message": "Email is required"
+    },
+    {
+      "code": "length_error",
+      "attribute": "name",
+      "message": "Name must be between 2 and 20 characters"
+    }
+  ]
+}

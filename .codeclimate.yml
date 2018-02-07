@@ -1,0 +1,14 @@
+version: "2"
+plugins:
+  phpmd:
+    enabled: true
+    config:
+      rulesets: phpmd-ruleset.xml
+  phpcodesniffer:
+    enabled: true
+    config:
+      standard: "PSR1,PSR2"
+exclude_patterns:
+- "tests/"
+- "vendor/"
+- ".php_cs.dit"
