@@ -1,5 +1,11 @@
 Drip PHP API Wrapper
 ===
+<p align="center">
+<a href="https://travis-ci.org/mmollick/drip-php"><img src="https://travis-ci.org/mmollick/drip-php.svg" alt="Build Status"></a>
+<a href="https://codeclimate.com/github/mmollick/drip-php/maintainability"><img src="https://api.codeclimate.com/v1/badges/d8dbf59dacccf37a1c77/maintainability" /></a>
+<a href="https://packagist.org/packages/mmollick/drip-php"><img src="https://img.shields.io/packagist/v/mmollick/drip-php.svg" /></a>
+<a href="https://packagist.org/packages/mmollick/drip-php"><img src="https://img.shields.io/packagist/dm/mmollick/drip-php.svg" /></a>
+</p>
 
 ### Requirements
 * PHP 5.6 or greater
