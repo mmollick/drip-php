@@ -32,7 +32,7 @@ Or add the following to your `composer.json` file:
 ``` json
 {
   "require": {
-    "mmollick/drip-php":"~1.0.0"
+    "mmollick/drip-php":"~0.1.0"
   }
 }
 ```
@@ -206,4 +206,4 @@ All of the request methods can be accessed statically from the `\MMollick\Drip\D
 
 ## Support
 
-This package is open-source and maintained by the community. Drip does not directly participate in the maintenance of this package. Any issues with this package should be addressed by [opening a new issue](/mmollick/drip-php/issues/new).
+This package is open-source and maintained by the community. Drip does not directly participate in the maintenance of this package. Any issues with this package should be addressed by [opening a new issue](https://github.com/mmollick/drip-php/issues/new).
