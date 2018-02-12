@@ -444,15 +444,15 @@ class ApiClient
         $decoded = $this->getDecodedResponse();
         foreach ((array) $decoded['errors'] as $error) {
             // Prefer showing the error message over showing just the code
-            if (isset($errors['message'])) {
+            if (isset($error['message'])) {
                 $string .= "\n{$error['message']}";
 
                 // Append code after message if available
-                if (isset($errors['code'])) {
+                if (isset($error['code'])) {
                     $string .= " ({$error['code']})";
                 }
                 continue;
-            } elseif (array_key_exists('code', $error)) {
+            } elseif (isset($error['code'])) {
                 $string .= "\n{$error['code']}";
                 continue;
             }
