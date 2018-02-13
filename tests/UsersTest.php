@@ -16,6 +16,6 @@ class UsersTest extends TestCase
         $resp = $drip->getUser();
 
         $req = $drip->getClient();
-        $this->assertEquals('https://api.getdrip.com/v2/123/user', $req->getUrl());
+        $this->assertEquals('https://api.getdrip.com/v2/user', $req->getUrl());
     }
 }

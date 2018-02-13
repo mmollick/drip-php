@@ -26,6 +26,6 @@ trait Users
      */
     public function getUser()
     {
-        return $this->client->accountRequest('GET', 'user');
+        return $this->client->request('GET', 'user');
     }
 }
