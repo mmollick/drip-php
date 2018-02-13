@@ -227,6 +227,7 @@ All of the request methods can be accessed statically from the `\MMollick\Drip\D
 2) Create your feature branch (git checkout -b my-new-feature)
 3) Commit your changes (git commit -am 'Add some feature')
     - Add tests when relevant
+    - If you add a new method to the Request class or the Request traits be sure to include the static declaration in Drip.php's phpdoc
 4) Push to the branch (git push origin my-new-feature)
     - Fix linting issues Code-Climate Identifies
 5) Create a new Pull Request
