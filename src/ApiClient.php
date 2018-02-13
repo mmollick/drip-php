@@ -229,13 +229,14 @@ class ApiClient
         $this->setCurlOpts();
         $this->rawResponse = $this->client->execute();
 
-        if ($this->debug) {
-            var_dump($this->rawResponse);
-        }
-
         // Get status code
         $this->statusCode = $this->client->getInfo(CURLINFO_HTTP_CODE);
         $this->client->close();
+
+        if ($this->debug) {
+            fwrite(STDOUT, 'Status Code: ' . $this->statusCode . PHP_EOL);
+            fwrite(STDOUT, 'Server Response: ' . $this->rawResponse . PHP_EOL);
+        }
 
         // Catches curl errors
         if ($this->rawResponse === false) {
@@ -266,15 +267,24 @@ class ApiClient
      */
     protected function initCurl()
     {
+        $payload = ($this->method === 'GET') ?
+            http_build_query($this->payload) : json_encode($this->payload);
+
+        if ($this->debug) {
+            fwrite(STDOUT, 'Request URI: ' . $this->getUrl() . PHP_EOL);
+            fwrite(STDOUT, 'Request Method: ' . $this->method . PHP_EOL);
+            fwrite(STDOUT, 'Request Payload: ' . $payload . PHP_EOL);
+        }
+
         // If this is a GET request append query to the end of the url
         if ($this->method === 'GET') {
-            $this->client->init($this->getUrl() . '?' . http_build_query($this->payload));
+            $this->client->init($this->getUrl() . '?' . $payload);
             return;
         }
 
         // Assume all other requests are POST and set fields accordingly
         $this->client->init($this->getUrl());
-        $this->client->setOpt(CURLOPT_POSTFIELDS, json_encode($this->payload));
+        $this->client->setOpt(CURLOPT_POSTFIELDS, $payload);
         $this->client->setOpt(CURLOPT_CUSTOMREQUEST, $this->method);
     }
 
