@@ -13,6 +13,7 @@ class Request
         Requests\CustomFields,
         Requests\Events,
         Requests\Forms,
+        Requests\Purchases,
         Requests\Subscribers,
         Requests\Tags,
         Requests\Users,

@@ -168,11 +168,11 @@ All of the request methods can be accessed statically from the `\MMollick\Drip\D
 
 ##### Purchases
 
-| Actions                         | Methods        |
-|:--------------------------------|:---------------|
-| List purchases for a subscriber | coming soon... |
-| Create a purchase               | coming soon... |
-| Fetch a purchase                | coming soon... |
+| Actions                         | Methods                                                  |
+|:--------------------------------|:---------------------------------------------------------|
+| List purchases for a subscriber | `getPurchasesForSubscriber($id_or_email, $options = [])` |
+| Create a purchase               | `addPurchaseToSubscriber($id_or_email, $purchase_id)`    |
+| Fetch a purchase                | `getPurchaseForSubscriber($id_or_email, $payload)`       |
 
 ##### Subscribers
 
