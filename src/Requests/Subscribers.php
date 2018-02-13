@@ -66,6 +66,25 @@ trait Subscribers
     }
 
     /**
+     * @param array $subscribers
+     * @return mixed
+     * @throws ApiException
+     * @throws AuthException
+     * @throws GeneralException
+     * @throws HttpClientException
+     * @throws RateLimitException
+     * @throws ValidationException
+     */
+    public function createOrUpdateSubscribers(array $subscribers)
+    {
+        $this->client->accountRequest('POST', 'subscribers/batches', [
+            'batches' => [['subscribers' => $subscribers]]
+        ]);
+
+        return true;
+    }
+
+    /**
      * @param array $id_or_email
      * @param null $campaign_id Leave empty for all campaigns
      * @return mixed
@@ -127,5 +146,24 @@ trait Subscribers
     public function listSubscribersSubscriptions($subscriber_id)
     {
         return $this->client->accountRequest('GET', 'subscribers/' . $subscriber_id . '/campaign_subscriptions');
+    }
+
+    /**
+     * @param $subscribers
+     * @return bool
+     * @throws ApiException
+     * @throws AuthException
+     * @throws GeneralException
+     * @throws HttpClientException
+     * @throws RateLimitException
+     * @throws ValidationException
+     */
+    public function unsubscribeSubscribers($subscribers)
+    {
+        $this->client->accountRequest('POST', 'unsubscribes/batches', [
+            'batches' => [['subscribers' => $subscribers]]
+        ]);
+
+        return true;
     }
 }

@@ -180,8 +180,8 @@ All of the request methods can be accessed statically from the `\MMollick\Drip\D
 |:-------------------------------------|:-------------------------------------------------------------------|
 | List subscribers                     | `getSubscribers($options = [])`                                    |
 | Create/update a subscriber           | `createOrUpdateSubscriber($email, $payload = {})`                  |
-| Create/update a batch of subscribers | coming soon...                                                     |
-| Unsubscribe a batch of subscribers   | coming soon                                                        |
+| Create/update a batch of subscribers | `createOrUpdateSubscribers($subscribers)`                          |
+| Unsubscribe a batch of subscribers   | `unsubscribeSubscribers($subscribers)`                             |
 | Fetch a subscriber                   | `getSubscriber($id_or_email)`                                      |
 | Delete                               | `deleteSubscriber($id_or_email)`                                   |
 | Subscribe to a campaign              | See `subscribeToCampaign` in Campaigns                             |
