@@ -51,4 +51,58 @@ class EventsTest extends TestCase
             ]
         ], $req->getPayload());
     }
+
+    public function testRecordBatches()
+    {
+        $mock = $this->getMockHttpClient();
+        $mock->method('getInfo')->willReturn(204);
+
+        $drip = new Request($this->auth, $mock);
+        $resp = $drip->recordEvents([
+            [
+                'email' => 'john@acme.com',
+                'action' => 'Logged in',
+                'properties' => [
+                    'affiliate_code' => 'XYZ',
+                ],
+                'occurred_at'=> '2014-03-22T03:00:00Z'
+            ],
+            [
+                'email' => 'joe@acme.com',
+                'action' => 'Logged in',
+                'properties' => [
+                    'affiliate_code' => 'XYZ',
+                ],
+                'occurred_at'=> '2014-03-22T03:00:00Z'
+            ]
+        ]);
+        $this->assertTrue($resp);
+
+        $req = $drip->getClient();
+        $this->assertEquals('https://api.getdrip.com/v2/123/events/batches', $req->getUrl());
+        $this->assertEquals([
+            'batches' => [
+                [
+                    'events' => [
+                        [
+                            'email' => 'john@acme.com',
+                            'action' => 'Logged in',
+                            'properties' => [
+                                'affiliate_code' => 'XYZ',
+                            ],
+                            'occurred_at'=> '2014-03-22T03:00:00Z'
+                        ],
+                        [
+                            'email' => 'joe@acme.com',
+                            'action' => 'Logged in',
+                            'properties' => [
+                                'affiliate_code' => 'XYZ',
+                            ],
+                            'occurred_at'=> '2014-03-22T03:00:00Z'
+                        ]
+                    ]
+                ]
+            ]
+        ], $req->getPayload());
+    }
 }

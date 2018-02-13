@@ -42,8 +42,26 @@ trait Events
      */
     public function recordEvent($payload)
     {
-        $this->client->accountRequest('GET', 'events', [
+        $this->client->accountRequest('POST', 'events', [
             'events' => [$payload]
+        ]);
+        return true;
+    }
+
+    /**
+     * @param array $events
+     * @return mixed
+     * @throws ApiException
+     * @throws AuthException
+     * @throws GeneralException
+     * @throws HttpClientException
+     * @throws RateLimitException
+     * @throws ValidationException
+     */
+    public function recordEvents($events)
+    {
+        $this->client->accountRequest('POST', 'events/batches', [
+            'batches' => [['events' => $events]]
         ]);
         return true;
     }

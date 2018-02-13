@@ -156,7 +156,7 @@ All of the request methods can be accessed statically from the `\MMollick\Drip\D
 | Actions                       | Methods                 |
 |:------------------------------|:------------------------|
 | Track an event                | `recordEvent($payload)` |
-| Track a batch of events       | Coming soon...          |
+| Track a batch of events       | `recordEvents($events)` |
 | List all custom event actions | `listActions()`         |
 
 ##### Forms
