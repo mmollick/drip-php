@@ -55,4 +55,37 @@ class WorkflowTriggersTest extends TestCase
             ]
         ], $req->getPayload());
     }
+
+    public function testUpdateWorkflowTrigger()
+    {
+        $mock = $this->getMockHttpClient();
+        $mock->method('execute')->willReturn($this->getData('null'));
+        $mock->method('getInfo')->willReturn(200);
+
+        $drip = new Request($this->auth, $mock);
+        $drip->updateWorkflowTrigger(12345, 'abcde', [
+            'provider' => 'leadpages',
+            'trigger_type' => 'submitted_landing_page',
+            'properties' => [
+                'landing_page' => 'My Landing Page',
+            ],
+        ]);
+
+        $req = $drip->getClient();
+        $this->assertEquals(
+            'https://api.getdrip.com/v2/123/workflows/12345/triggers/abcde',
+            $req->getUrl()
+        );
+        $this->assertEquals([
+            'triggers' => [
+                [
+                    'provider' => 'leadpages',
+                    'trigger_type' => 'submitted_landing_page',
+                    'properties' => [
+                        'landing_page' => 'My Landing Page',
+                    ]
+                ]
+            ]
+        ], $req->getPayload());
+    }
 }

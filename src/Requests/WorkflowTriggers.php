@@ -50,6 +50,7 @@ trait WorkflowTriggers
 
     /**
      * @param $workflow_id
+     * @param $trigger_id
      * @param $payload
      * @return mixed
      * @throws ApiException
@@ -59,9 +60,9 @@ trait WorkflowTriggers
      * @throws RateLimitException
      * @throws ValidationException
      */
-    public function updateWorkflowTrigger($workflow_id, $payload)
+    public function updateWorkflowTrigger($workflow_id, $trigger_id, $payload)
     {
-        return $this->client->accountRequest('PUT', 'workflows/' . $workflow_id . '/triggers', [
+        return $this->client->accountRequest('PUT', 'workflows/' . $workflow_id . '/triggers/' . $trigger_id, [
             'triggers' => [$payload]
         ]);
     }
