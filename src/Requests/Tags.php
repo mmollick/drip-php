@@ -42,7 +42,14 @@ trait Tags
      */
     public function applyTag($email, $tag)
     {
-        $this->client->accountRequest('POST', 'subscribers/' . $email . '/tags/' . $tag);
+        $this->client->accountRequest('POST', 'tags', [
+            'tags' => [
+                [
+                    'email' => $email,
+                    'tag' => $tag
+                ]
+            ]
+        ]);
         return true;
     }
 

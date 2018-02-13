@@ -33,7 +33,15 @@ class TagsTest extends TestCase
         $this->assertTrue($resp);
 
         $req = $drip->getClient();
-        $this->assertEquals('https://api.getdrip.com/v2/123/subscribers/test@example.com/tags/foo', $req->getUrl());
+        $this->assertEquals('https://api.getdrip.com/v2/123/tags', $req->getUrl());
+        $this->assertEquals([
+            'tags' => [
+                [
+                    'email' => 'test@example.com',
+                    'tag' => 'foo'
+                ]
+            ]
+        ], $req->getPayload());
     }
 
     public function testRemove()
