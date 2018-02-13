@@ -12,10 +12,6 @@ Drip PHP API Wrapper
 * PHP JSON extension
 * PHP cURL extension
 
-### Todo
-* Add batch capabilities
-* Add payment endpoints
-
 Installation
 ---
 
