@@ -2,7 +2,6 @@
 
 namespace MMollick\Drip\Tests;
 
-use MMollick\Drip\Drip;
 use MMollick\Drip\Request;
 
 class AccountsTest extends TestCase

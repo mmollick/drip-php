@@ -2,7 +2,6 @@
 
 namespace MMollick\Drip\Tests;
 
-use MMollick\Drip\Forms;
 use MMollick\Drip\Request;
 
 class PurchasesTest extends TestCase
