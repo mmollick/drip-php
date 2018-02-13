@@ -29,14 +29,20 @@ use MMollick\Drip\HttpClient\HttpClientInterface;
  * @method static mixed getCustomerFields()
  * @method static mixed listActions($options = [])
  * @method static mixed recordEvent($payload)
+ * @method static mixed recordEvents($events)
  * @method static mixed getForms($options = [])
  * @method static mixed getForm($form_id)
+ * @method static mixed addPurchaseToSubscriber($id_or_email, $payload)
+ * @method static mixed getPurchasesForSubscriber($id_or_email, $options = [])
+ * @method static mixed getPurchaseForSubscriber($id_or_email, $purchase_id)
  * @method static mixed getSubscribers($options = [])
  * @method static mixed getSubscriber($id_or_email)
- * @method static mixed createOrUpdateSubscriber($email, $payload)
+ * @method static mixed createOrUpdateSubscriber($email,  $payload)
+ * @method static mixed createOrUpdateSubscribers($subscribers)
  * @method static mixed removeSubscriberFromCampaigns($id_or_email, $campaign_id = null)
  * @method static mixed removeSubscriberFromAllMailings($id_or_email)
  * @method static mixed deleteSubscriber($id_or_email)
+ * @method static mixed unsubscribeSubscribers($subscribers)
  * @method static mixed getTags()
  * @method static mixed applyTag($email, $tag)
  * @method static mixed removeTag($email, $tag)
@@ -87,7 +93,7 @@ class Drip
      * @param $args
      * @return mixed
      */
-    public static function __callStatic($method, $args)
+    public static function __callStatic(x$method, $args)
     {
         if (method_exists(self::getInstance()->auth, $method)) {
             return call_user_func_array([self::getInstance()->auth, $method], $args);
