@@ -135,6 +135,14 @@ class ApiClient
     }
 
     /**
+     * @return array
+     */
+    public function getHeaders()
+    {
+        return $this->responseHeaders;
+    }
+
+    /**
      * @return int
      */
     public function getStatusCode()
